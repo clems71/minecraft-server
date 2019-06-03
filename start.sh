@@ -1,8 +1,14 @@
 echo "eula=true" > eula.txt
 
-echo $MINECRAFT_OPS_JSON > ./ops.json
+if [ -n "$MINECRAFT_OPS_JSON" ]
+then
+    echo $MINECRAFT_OPS_JSON > ./ops.json
+fi
 
-echo $MINECRAFT_WHITELIST_JSON > ./whitelist.json
+if [ -n "$MINECRAFT_WHITELIST_JSON" ]
+then
+    echo $MINECRAFT_WHITELIST_JSON > ./whitelist.json
+fi
 
 if [ -z "$MINECRAFT_SERVER_PROPS" ]
 then
