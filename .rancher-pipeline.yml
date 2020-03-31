@@ -1,9 +1,0 @@
-stages:
-- name: Build
-  steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: apps/minecraft-server
-timeout: 60
-notification: {}

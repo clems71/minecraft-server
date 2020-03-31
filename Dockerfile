@@ -1,6 +1,6 @@
 FROM openjdk
 WORKDIR /srv
-COPY bin/minecraft_server.1.14.2.jar .
+COPY bin/minecraft_server.1.15.2.jar .
 COPY start.sh .
 COPY defaults defaults
 WORKDIR /data

@@ -17,4 +17,4 @@ else
     echo "$MINECRAFT_SERVER_PROPS" > ./server.properties
 fi
 
-java -Xmx1024M -Xms1024M -jar /srv/minecraft_server.1.14.2.jar nogui
+java -Xmx1024M -Xms1024M -jar /srv/minecraft_server.1.15.2.jar nogui
