@@ -1,0 +1,78 @@
+# Default values for minecraft-server.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: clems71/minecraft-server
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ''
+fullnameOverride: ''
+
+podSecurityContext: {}
+
+securityContext: {}
+
+server:
+  whitelist:
+    []
+    # - uuid: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    #   name: xxxxxx
+
+  # Sane default (beware, the server is open)
+  props: |
+    motd=Minecraft Server Helm Chart
+    generator-settings=
+    op-permission-level=4
+    allow-nether=true
+    level-name=world
+    enable-query=false
+    allow-flight=false
+    prevent-proxy-connections=false
+    server-port=25565
+    max-world-size=29999984
+    level-type=DEFAULT
+    enable-rcon=false
+    level-seed=
+    force-gamemode=false
+    server-ip=
+    network-compression-threshold=256
+    max-build-height=256
+    spawn-npcs=true
+    white-list=false
+    spawn-animals=true
+    hardcore=false
+    snooper-enabled=true
+    resource-pack-sha1=
+    online-mode=true
+    resource-pack=
+    pvp=true
+    difficulty=3
+    enable-command-block=false
+    gamemode=0
+    player-idle-timeout=0
+    max-players=10
+    max-tick-time=60000
+    spawn-monsters=true
+    view-distance=10
+    generate-structures=true
+
+service:
+  type: LoadBalancer
+  port: 25565
+  annotations: {}
+
+resources:
+  limits:
+    cpu: 1200m
+    memory: 1.5Gi
+  requests:
+    cpu: 1000m
+    memory: 1Gi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
